@@ -1,0 +1,189 @@
+
+	
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<style type = "text/css">
+<!-- 
+#the_body{
+  			background-color: #FFFFFF;
+  			color: #000;
+				font-family:Verdana;
+				font-size:16px;
+				font-weight:bold;
+  			margin:0;
+				text-align:center;}
+		
+			  
+#mc_content{width:100%;text-align:center;}				
+    #mc_content_content{
+   				   width:980px;
+      			   height:600px;
+      			   margin:0px auto;
+      			   color:#000;
+      			   text-align:left;
+   				   }				
+ 
+
+.math_text{  			color: #000;
+				font-family:Verdana;
+				font-size:16px;
+				font-weight:bold;
+				float:left;
+				margin:0 10px;
+}
+
+-->
+</style>
+
+
+
+<script type = "text/javascript">
+<!--
+var rn = 0; //number of tests given
+var ga = 0; //number of good answers
+var ba = 0; //number of bad answers
+
+var ceiling = 11;
+var	n1 = Math.floor(Math.random()*ceiling)
+var n2 = Math.floor(Math.random()*ceiling)
+
+var operator = new Array("+","-","*");
+var current_operator = 0;
+var current_level = 1;
+
+function domath(r){
+
+var math_zone = document.getElementById('math_zone');
+var insert_point = document.getElementById('insert_point');
+rn++;
+
+		var New_result = document.createElement('div');
+		New_result.setAttribute('className', 'math_text'); //IE specific
+		New_result.setAttribute('class', 'math_text');	 //FF & others
+		New_result.setAttribute('id', 'result'+rn);
+
+//		New_result.innerHTML = n1 + operator[current_operator] + n2 + "=" + r ;
+		math_zone.insertBefore(New_result,insert_point);
+
+		document.getElementById('result'+rn).style.color= (r==n1+n2)? "#008800":"#CC0000";
+		document.getElementById('result'+rn).innerHTML =  n1 + operator[current_operator] + n2 + "=" + r ;
+		if (r==n1+n2)ga++; else ba++;
+		thescore = current_level * (ga-ba);
+			  document.getElementById('g_ans').innerHTML=ga;
+			  document.getElementById('b_ans').innerHTML=ba;
+			  document.getElementById('score').innerHTML=thescore;
+
+		//next item--------------------
+        		
+        alert("current_level "+current_level)
+        switch(current_level)
+        {
+            case "1":
+				  //addition only, number =<10
+              current_operator = 0;	 
+        	  ceiling = 11;
+              break;
+            case "2":
+              //addition or substraction, number =<10
+				  current_operator = Math.floor(Math.random()*2);	 
+        	  ceiling = 11;
+              break;
+            case "3":
+  			  //addition, substraction or multiplication number =<10
+              current_operator = Math.floor(Math.random()*3);	 
+        	  ceiling = 11;
+              break;
+            case "4":
+				  //addition, substraction or multiplication number =<20
+              current_operator = Math.floor(Math.random()*3);	 
+        	  ceiling = 21;
+              break;
+        
+        }//end switch(current_level)
+        		
+		alert(current_operator)
+		alert(ceiling)
+		
+		n1 = Math.floor(Math.random()*ceiling)
+		n2 = Math.floor(Math.random()*ceiling)
+
+		setfocus()
+}//end function domath()
+
+
+function setlevel(thelevel){
+			 current_level = thelevel;
+}//end function setlevel(thelevel)
+
+function setfocus(){
+
+			  var thestring = n1 + operator[current_operator] + n2 + " = "
+			  document.getElementById('themath').innerHTML=thestring;
+			  document.getElementById('theresult').focus();
+			  document.getElementById('theresult').value="";
+ }//end function setfocus()
+ 
+ 
+ 
+// -->
+</script>
+
+
+	<title>The Brain Mather</title>
+
+</head>
+
+<body id="the_body" onload="setfocus();">
+
+
+
+
+   <div id="mc_content">
+	   <div id="mc_content_content">
+<h3>The Brain Mather &ndash;
+ <span id="g_ans" style="color:#008800;">0</span><span style="color:#008800;"> Correct Answers </span>
+ <span id="b_ans" style="color:#CC0000;">0</span><span style="color:#CC0000;"> Wrong Answers</span>
+<span> Score: </span><span id="score">0</span></h3>            
+
+
+    <div style="margin:0 0 50px 0">            	
+                <div>
+    					<input id="thelevel_1" class="math_text" name="thelevel" value="1" type = "radio" onchange="setlevel(this.value)" checked="checked"  />
+    					 <label class="math_text" for = "thelevel_1" >Level 1</label>
+    				</div>	
+                <div>
+    					<input id="thelevel_2" class="math_text" name="thelevel" value="2" type = "radio" onchange="setlevel(this.value)" />
+    					 <label class="math_text" for = "thelevel_2">Level 2</label>
+    				</div>	
+                <div>
+    					<input id="thelevel_3" class="math_text" name="thelevel" value="3" type = "radio" onchange="setlevel(this.value)" />
+    					 <label class="math_text" for = "thelevel_3">Level 3</label>
+    				</div>	
+                <div>
+    					<input id="thelevel_4" class="math_text" name="thelevel" value="4" type = "radio" onchange="setlevel(this.value)" />
+    					 <label class="math_text" for = "thelevel_4">Level 4</label>
+    				</div>	
+    </div>            
+     <div id="math_zone">       	
+            <div id="insert_point"></div>
+            <div>
+					 <label id="themath" class="math_text" for = "theresult"></label>&nbsp;&nbsp;
+					<input id="theresult" class="math_text" style="width:50px;" name="theresult" value="" type = "text" onchange="domath(this.value)" />
+				</div>	
+     </div>       
+            
+            
+            
+            
+            
+	
+	
+
+		   	 </div><!-- id="mc_content_content" -->
+  	 </div><!-- id="mc_content" -->
+		
+
+</body>
+</html>

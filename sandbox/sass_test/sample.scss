@@ -1,0 +1,14 @@
+
+
+$yellow: #ffff00;
+$blue: #0000ff;
+
+#maindiv p {
+  color: $blue;
+  width: 97%;
+
+  .yellowbox {
+    background-color: $yellow;
+    color: $blue;
+  }
+}

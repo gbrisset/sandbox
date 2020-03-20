@@ -1,0 +1,36 @@
+button.pcalc {
+    border-radius: 33%;
+    width: 50px;
+    height: 50px;
+    font-size: x-large; 
+    cursor: pointer;
+    outline: none;
+}
+
+ button#button_dec_current_max{background-color: #c2ff66;}   
+ button#button_inc_current_max{background-color: #ffad00;}   
+    
+table.pcalc {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+    
+
+/*tr:nth-child(even) {background-color: #ff9900;} */
+tr:nth-child(even).results {background-color: #ffcc00;} 
+td.pcalc {text-align: center;}
+input.current_max{width: 100%;}
+
+
+div.w1_pcalc_chart_bar {background-color: #c2ff66; text-align: left;}
+div.w2_pcalc_chart_bar {background-color: #ffad00; text-align: left;}
+div.w3_pcalc_chart_bar {background-color: #c2ff66; text-align: left;}
+div.w4_pcalc_chart_bar {background-color: #ffad00; text-align: left;}
+
+
+td.w1_pcalc_chart, h2.w1_pcalc_chart {background-color: #c2ff66;}
+td.w2_pcalc_chart, h2.w2_pcalc_chart {background-color: #ffad00;}
+td.w3_pcalc_chart, h2.w3_pcalc_chart {background-color: #c2ff66;}
+td.w4_pcalc_chart, h2.w4_pcalc_chart {background-color: #ffad00;}
+

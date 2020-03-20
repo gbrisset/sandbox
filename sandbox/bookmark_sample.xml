@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<bookmark_list>
+
+	<folder>
+		<folder_id>1</folder_id>
+		<parent_id>0</parent_id>
+		<label>Folder 1 - 2 boorkmarks</label>
+	</folder>
+			
+			<bookmark>
+				<bookmark_id>1</bookmark_id>
+				<parent_id>1</parent_id>
+				<label>link 1 - child of folder 1</label>
+				<link>http://www.google.com/</link>
+			</bookmark>
+			<bookmark>
+				<bookmark_id>2</bookmark_id>
+				<parent_id>1</parent_id>
+				<label>link 2 - child of folder 1</label>
+				<link>http://www.xyz.com/</link>
+			</bookmark>
+
+	<folder>
+		<folder_id>2</folder_id>
+		<parent_id>0</parent_id>
+		<label>Folder 2 - 2 boorkmarks + 1 subfolder with 2 bookmarks</label>
+	</folder>
+		
+			<bookmark>
+				<bookmark_id>3</bookmark_id>
+				<parent_id>2</parent_id>
+				<label>link 3 - child of folder 2</label>
+				<link>http://www.abc.com/</link>
+			</bookmark>
+			<bookmark>
+				<bookmark_id>4</bookmark_id>
+				<parent_id>2</parent_id>
+				<label>link 4 - child of folder 2</label>
+				<link>http://www.mylink.com/</link>
+			</bookmark>
+				
+			<folder>
+				<folder_id>3</folder_id>
+				<parent_id>2</parent_id>
+				<label>Folder 3 - 2 boorkmarks - child of folder 2 </label>
+			</folder>
+				
+					<bookmark>
+						<bookmark_id>5</bookmark_id>
+						<parent_id>3</parent_id>
+						<label>link 5 - child of folder 3</label>
+						<link>http://www.abc.com/</link>
+					</bookmark>
+					<bookmark>
+						<bookmark_id>6</bookmark_id>
+						<parent_id>3</parent_id>
+						<label>link 6 - child of folder 3</label>
+						<link>http://www.mylink.com/</link>
+					</bookmark>
+			
+		
+		
+		
+</bookmark_list>
